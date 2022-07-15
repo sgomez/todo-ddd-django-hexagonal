@@ -76,10 +76,11 @@ WSGI_APPLICATION = "tododdd.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        # "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+# DATABASES["default"] = env.db(default="postgres://postgres@localhost/dataservice")  # noqa: F405
 
 
 # Password validation

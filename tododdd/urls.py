@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from .task.infrastructure.task.schema import schema
+from .task.infrastructure.task.views import AsyncGraphQLView
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
+    path("graphql/", AsyncGraphQLView.as_view(schema=schema)),
 ]

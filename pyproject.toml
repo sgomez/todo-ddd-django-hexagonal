@@ -7,6 +7,7 @@ authors = ["Sergio Gómez <decano@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 Django = "^3.2.0"
+strawberry-graphql = "^0.117.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.1"

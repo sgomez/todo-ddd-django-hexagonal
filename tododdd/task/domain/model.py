@@ -1,5 +1,7 @@
 from dataclasses import dataclass
 
+from tododdd.task.domain.exception import LogicDomainError
+
 
 @dataclass(frozen=True)
 class TaskTitle:
@@ -7,10 +9,10 @@ class TaskTitle:
 
     def __post_init__(self):
         if 0 == len(self.value.strip()):
-            raise Exception("Empty title cannot be empty.")
+            raise LogicDomainError("Empty title cannot be empty.")
 
         if len(self.value.strip()) > 200:
-            raise Exception("Invalid length.")
+            raise LogicDomainError("Invalid length.")
 
     def __eq__(self, other: object) -> bool:
         return isinstance(other, TaskTitle) and self.value == other.value
